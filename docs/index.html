@@ -5,32 +5,96 @@
   <title>🎉 生日快乐</title>
   <style>
     body {
-      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      background: linear-gradient(to right, #e0c3fc, #8ec5fc); /* 淡紫色渐变背景 */
       color: #333;
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       padding: 50px;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
+
     h1 {
       font-size: 48px;
+      margin-bottom: 10px;
     }
+
     p {
       font-size: 24px;
+      margin-bottom: 30px;
     }
+
+    .image-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0;
+    }
+
     img {
       width: 300px;
+      height: auto;
       border-radius: 20px;
-      margin: 20px 0;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 2s ease-out forwards;
+      animation-delay: 1s;
     }
+
+    .bubble {
+      position: absolute;
+      width: 200px;
+      padding: 15px;
+      background: #d1b3ff; /* 紫色气泡 */
+      color: #fff;
+      border-radius: 20px;
+      font-size: 18px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+    }
+
+    .bubble.left {
+      left: -220px;
+      animation-delay: 2s;
+    }
+
+    .bubble.right {
+      right: -220px;
+      animation-delay: 3s;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
     audio {
-      margin-top: 30px;
+      margin-top: auto;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
   <h1>🎂 亲爱的朋友，生日快乐！</h1>
   <p>愿你拥有美好的一年，每一天都开心幸福！</p>
-  <img src="myplot.png" alt="生日图">
+
+  <div class="image-container">
+    <div class="bubble left">🎈 今天是属于你的特别日子！</div>
+    <img src="myplot.png" alt="生日图">
+    <div class="bubble right">🎁 愿你梦想成真，每天都有好心情！</div>
+  </div>
+
   <audio controls autoplay>
     <source src="F1owery - Plum - Icedust.mp3" type="audio/mpeg">
     你的浏览器不支持音频播放。
