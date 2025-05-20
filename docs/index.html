@@ -5,17 +5,16 @@
   <title>🎉 生日快乐</title>
   <style>
     body {
-      background: linear-gradient(to right, #e0c3fc, #8ec5fc); /* 淡紫色渐变背景 */
+      background: linear-gradient(to right, #e0c3fc, #8ec5fc); /* 淡紫色背景 */
       color: #333;
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       padding: 50px;
-      position: relative;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
 
     h1 {
@@ -30,17 +29,17 @@
 
     .image-container {
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 300px;
+      height: auto;
       margin: 40px 0;
     }
 
-    img {
-      width: 300px;
+    .image-container img {
+      width: 100%;
       height: auto;
       border-radius: 20px;
-      z-index: 1;
+      z-index: 0;
+      position: relative;
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 2s ease-out forwards;
@@ -55,19 +54,20 @@
       color: #fff;
       border-radius: 20px;
       font-size: 18px;
+      z-index: 2;
       opacity: 0;
       animation: fadeIn 2s ease-in forwards;
     }
 
     .bubble.left {
-      left: -220px;
-      top:-30px
+      left: -210px;
+      top: 30px;
       animation-delay: 2s;
     }
 
     .bubble.right {
-      right: -220px;
-      top:30px
+      right: -210px;
+      top: 100px;
       animation-delay: 3s;
     }
 
@@ -92,9 +92,9 @@
   <p>愿你拥有美好的一年，每一天都开心幸福！</p>
 
   <div class="image-container">
-    <div class="bubble left">🎈 今天是属于你的特别日子！</div>
+    <div class="bubble left">🎮 “生日嘛，就该像我打穿游戏一样——横着走，爽爽过！</div>
     <img src="SelverWolf.png" alt="生日图">
-    <div class="bubble right">🎁 愿你梦想成真，每天都有好心情！</div>
+    <div class="bubble right">🌟 “今天你最大，蛋糕不够我再去偷个黑塔小人给你凑！</div>
   </div>
 
   <audio controls autoplay>
